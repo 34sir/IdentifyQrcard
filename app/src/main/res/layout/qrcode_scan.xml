@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relative_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5E5E5"
+    >
+
+    <include
+        android:id="@+id/include_title"
+        layout="@layout/util_title" />
+
+    <RelativeLayout
+        android:id="@+id/rl_capturetop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/include_title" >
+
+        <SurfaceView
+            android:id="@+id/capture_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:background="#60000000" />
+
+            <RelativeLayout
+                android:id="@+id/rl_capture"
+                android:layout_width="250dp"
+                android:layout_height="match_parent" >
+
+                <View
+                    android:id="@+id/view_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="88dp"
+                    android:background="#60000000" />
+
+                <LinearLayout
+                    android:id="@+id/linear_capture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view_top"
+                    android:layout_centerHorizontal="true"
+                    android:background="@mipmap/dab_erweimasm"
+                    android:contentDescription="@string/app_name" >
+
+                    <ImageView
+                        android:id="@+id/capture_scan_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@mipmap/dab_saomiaotiao"
+                        android:contentDescription="@string/app_name" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_prompt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linear_capture"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_horizontal"
+                    android:text="扫描二维码"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_prompt"
+                    android:layout_marginTop="14dp"
+                    android:gravity="center_horizontal"
+                    android:text="二维码"
+                    android:textColor="#12c1d5"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/linear_capture"
+                    android:background="#60000000" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_weight="1.0"
+                android:background="#60000000" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_inputbyhand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/textview_border"
+            android:text="手动输入"
+            android:textColor="#ffffff" />
+
+        <LinearLayout
+            android:id="@+id/lin_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <EditText
+                android:id="@+id/et_code"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="4.0"
+                android:background="@drawable/textview_border"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                android:inputType="number" />
+
+            <RelativeLayout
+                android:id="@+id/rl_sure"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2.0" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textview_borders"
+                    android:gravity="center"
+                    android:text="确认"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp"
+                     />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/title_back_btn" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
